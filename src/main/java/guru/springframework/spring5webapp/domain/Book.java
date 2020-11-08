@@ -1,5 +1,6 @@
 package guru.springframework.spring5webapp.domain;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -26,10 +27,10 @@ public class Book {
 			)
 	private Set<Author> authors;
 	
-	public Book(String title, String isbn, Set<Author> authors) {
+	public Book(String title, String isbn) {
 		this.title = title;
 		this.isbn = isbn;
-		this.authors = authors;
+		authors = new HashSet<>();
 	}
 	public Long getId() {
 		return id;
